@@ -14,10 +14,10 @@ func gauges(myPlane : Aviatrix) {
     print("| Running:  | ✅")
     print("| Location:  | \(myPlane.location)")
     print("| Distance:  | \(myPlane.distanceTraveled) miles")
-//    print("| Fuel:      | \(myPlane.fuelLevel) gallons")
-//    print("| Max Fuel:  | \(myPlane.maxFuel) gallons")
-//    print("| MPG:       | \(myPlane.milesPerGallon)")
-//    print("| Fuel Bill: | \(myPlane.fuelCost)")
+    print("| Fuel:      | \(myPlane.fuelLevel) gallons")
+    print("| Max Fuel:  | \(myPlane.maxFuel) gallons")
+    print("| MPG:       | \(myPlane.milesPerGallon)")
+    print("| Fuel Bill: | \(myPlane.fuelCost)")
 }
 
 func fly(myPlane : Aviatrix) {
@@ -53,11 +53,11 @@ func fly(myPlane : Aviatrix) {
 }
 
 func refuel(myPlane : Aviatrix) {
-    let refuelData = myPlane.refuel()
+    let data = AviatrixData()
     
     print("Refueling...")
-    print("⛽ Here in _________, jet fuel costs _________")
-    print("⛽ You refueled _________ gallons totaling _________")
+    print("⛽ Here in \(plane.location), jet fuel costs \(data.fuelPrices[plane.location]!)")
+    print("⛽ You refueled \(plane.refuel()) gallons totaling \(data.fuelPrices[plane.location]! * plane.refuel())")
 }
 
 func fuelCheck(myPlane : Aviatrix, destination : String) -> Bool {
